@@ -105,7 +105,39 @@ Among IaC tools, Terraform stands out for several key reasons:
     
 
 ---
+## **Practical Use Cases of Terraform**
 
+1. **Multi-Region Deployments**:
+    - Deploy applications in multiple regions for high availability.
+    - **Example**: Deploying a website in both **us-east-1** and **us-west-2** for better performance and disaster recovery.
+2. **Infrastructure Scaling**:
+    - Scale infrastructure up or down based on traffic.
+    - **Example**: Automatically adding more EC2 instances during peak hours.
+3. **Consistent Environment Setup**:
+    - Create consistent environments for **development**, **staging**, and **production**.
+    - **Example**: Using the same Terraform code to set up isolated environments with identical configurations.
+4. **Disaster Recovery**:
+    - Quickly rebuild infrastructure in a different region or account.
+    - **Example**: Deploying the same infrastructure in a backup AWS account during a regional outage.
+
+---
+
+## **Best Practices for Terraform**
+
+1. **Use Modules**:
+    - Modularize your code for reusability and better organization.
+    - **Example**: Create a module for VPCs and reuse it in multiple projects.
+2. **Version Control**:
+    - Always keep your Terraform code in a version control system (e.g., Git).
+    - This enables change tracking and team collaboration.
+3. **Manage State Securely**:
+    - Store state files in a secure remote backend (e.g., **S3 with DynamoDB Locking**).
+    - This prevents conflicts in collaborative environments.
+4. **Automate with CI/CD**:
+    - Integrate Terraform with CI/CD pipelines for automated provisioning and updates.
+    - **Example**: Triggering infrastructure changes when code is merged into the main branch.
+
+---
 ## **Real-Time Example: Deploying an EC2 Instance with Terraform**
 
 Let's explore a simple example of deploying an EC2 instance on AWS.
@@ -152,35 +184,3 @@ terraform apply   # Provisions the resources on AWS
 ```
 
 ---
-
-## **Practical Use Cases of Terraform**
-
-1. **Multi-Region Deployments**:
-    - Deploy applications in multiple regions for high availability.
-    - **Example**: Deploying a website in both **us-east-1** and **us-west-2** for better performance and disaster recovery.
-2. **Infrastructure Scaling**:
-    - Scale infrastructure up or down based on traffic.
-    - **Example**: Automatically adding more EC2 instances during peak hours.
-3. **Consistent Environment Setup**:
-    - Create consistent environments for **development**, **staging**, and **production**.
-    - **Example**: Using the same Terraform code to set up isolated environments with identical configurations.
-4. **Disaster Recovery**:
-    - Quickly rebuild infrastructure in a different region or account.
-    - **Example**: Deploying the same infrastructure in a backup AWS account during a regional outage.
-
----
-
-## **Best Practices for Terraform**
-
-1. **Use Modules**:
-    - Modularize your code for reusability and better organization.
-    - **Example**: Create a module for VPCs and reuse it in multiple projects.
-2. **Version Control**:
-    - Always keep your Terraform code in a version control system (e.g., Git).
-    - This enables change tracking and team collaboration.
-3. **Manage State Securely**:
-    - Store state files in a secure remote backend (e.g., **S3 with DynamoDB Locking**).
-    - This prevents conflicts in collaborative environments.
-4. **Automate with CI/CD**:
-    - Integrate Terraform with CI/CD pipelines for automated provisioning and updates.
-    - **Example**: Triggering infrastructure changes when code is merged into the main branch.
